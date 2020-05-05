@@ -13,4 +13,6 @@ The script performs six steps to achieve this result, which will now be explaine
 3. The descriptive activity names are retrieved from _activity_labels.txt_ and replace the un-informative digits to denote activities
 4. The labels for every variable are retrieved from _features.txt_ and set as variable names. Furthermore, a space is added before every capitalized letter (for readability) and underscores are replaced by spaces (also for readability)
 5. A new data set is created, taking the mean of every variable in the data set of step 4 for every subject and every activity. The resulting dataset is a table containing the number of variables x (the number of subjects * the number of activities) values.
-6. The resulting two data sets (from step 4 and step 5) are then written to csv.
+6. The resulting two data sets (from step 4 and step 5) are then written to text.
+
+Both datasets are tidy, meaning every variable is in one column, each observation is in a different row, and all variables are of the same 'kind', all variables are numeric. 
