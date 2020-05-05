@@ -44,6 +44,6 @@ tidy_df <- mutate(tidy_df, activity = new_Y_names$V1)
 
 average_df <- tidy_df %>% group_by(subject, activity) %>% summarize_each(mean)
 
-# 6. Output the two tidy data sets to csv
-write.csv(tidy_df, "UCIHAR_tidy.csv", row.names = FALSE)
-write.csv(average_df, "UCIHAR_average.csv", row.names = FALSE)
+# 6. Output the two tidy data sets to text
+write.table(tidy_df, "UCIHAR_tidy.txt", row.names = FALSE)
+write.table(average_df, "UCIHAR_average.txt", row.names = FALSE)
