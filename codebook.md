@@ -1,10 +1,17 @@
- "subject"                     
+ "subject"        
+ 
       The participant that performed the activities. There are 30 participants
+
+
+
  "activity"                      
+ 
       The activity the participant performed; one of walking, sitting, laying, standing, walking upwards, walking downwards      
  
  
+ 
  Other measurements containing the data of the different sensors:
+ 
  "t Body Acceleration mean()  X"                
  "t Body Acceleration mean()  Y"                 "t Body Acceleration mean()  Z"                 "t Body Acceleration std()  X"                 
  "t Body Acceleration std()  Y"                  "t Body Acceleration std()  Z"                  "t Gravity Acceleration mean()  X"             
