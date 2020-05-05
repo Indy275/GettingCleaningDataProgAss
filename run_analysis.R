@@ -13,7 +13,7 @@ new_X <- rbind(x=X_train, y=X_test)
 new_Y <- rbind(x=Y_train, y=Y_test)
 
 # 2. Select only the mean and standard deviations from each measurement
-features <- read.table("rprj/UCI HAR Dataset/features.txt", header=FALSE)
+features <- read.table("rprj/UCI HAR Dataset/features.txt", header=FALSE) 
 new_X_mean_sd <- select(new_X, grep("mean()|std()", features$V2))
 
 # 3. Label Y with descriptive activity names
@@ -30,7 +30,7 @@ new_Y_names <- mutate(new_Y, V1 = recode(V1, "1" = tolower(activities[1]),
 # 4. Label X with descriptive variable names
 tidy_X <- cbind(new_X_mean_sd)
 names(tidy_X) <- features[grep("mean()|std()", features$V2),][,2]
-names(tidy_X) <- sub("Acc", "Acceleration", names(tidy_X))
+names(tidy_X) <- sub("Acc", "Acceleration", names(tidy_X)) 
 names(tidy_X) <- gsub("*([A-Z])", " \\1", names(tidy_X))
 names(tidy_X) <- gsub("-", " ", names(tidy_X))
 
@@ -43,3 +43,7 @@ tidy_df <- mutate(tidy_X, subject = new_subject$V1)
 tidy_df <- mutate(tidy_df, activity = new_Y_names$V1)
 
 average_df <- tidy_df %>% group_by(subject, activity) %>% summarize_each(mean)
+
+# 6. Output the two tidy data sets to csv
+write.csv(tidy_df, "UCIHAR_tidy.csv", row.names = FALSE)
+write.csv(average_df, "UCIHAR_average.csv", row.names = FALSE)
