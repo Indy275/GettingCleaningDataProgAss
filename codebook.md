@@ -1,3 +1,10 @@
+## Analysis steps
+The output in the file UCIHAR_average is created by running the run_analysis.R file using the raw UCI HAR dataset.
+No other processing steps have been taken.
+
+## Data
+The data comes from the UCI HAR dataset
+
 ## Non-measurements meta-data
 - subject      
  
